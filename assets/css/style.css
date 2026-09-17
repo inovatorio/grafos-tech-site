@@ -119,6 +119,29 @@ strong { font-weight: 700; }
 .nav__links .only-mobile { display: none; }   /* V3: Contato so no painel mobile */
 .nav__cta .btn--primary .cta-short { display: none; }  /* V2: rotulo curto so no mobile */
 .nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+
+/* Dropdown "Soluções": ICPs (Distribuidora / Auto Peças) evidenciados no menu.
+   Desktop: hover/focus revela o submenu. Sem JS, so CSS (:hover e :focus-within). */
+.nav__has-dropdown { position: relative; }
+.nav__has-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+.nav__caret { transition: transform .15s ease; flex: none; }
+.nav__has-dropdown:hover .nav__caret,
+.nav__has-dropdown:focus-within .nav__caret { transform: rotate(180deg); }
+.nav__dropdown {
+  list-style: none; margin: 0; padding: 8px; display: none;
+  position: absolute; top: 100%; left: -10px; margin-top: 6px; min-width: 200px;
+  background: #fff; border: 1px solid var(--neutro-200); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md); z-index: 60;
+}
+.nav__has-dropdown:hover .nav__dropdown,
+.nav__has-dropdown:focus-within .nav__dropdown { display: block; }
+.nav__dropdown li + li { margin-top: 2px; }
+.nav__dropdown a {
+  display: block; padding: 9px 10px; border-radius: 8px; font-size: .92rem;
+  white-space: nowrap; color: var(--grafite-700);
+}
+.nav__dropdown a:hover, .nav__dropdown a:focus-visible { background: var(--neutro-50); color: var(--laranja-texto); }
+.nav__dropdown .nav__dropdown-all { border-top: 1px solid var(--neutro-100); margin-top: 6px; padding-top: 8px; font-weight: 600; }
 .nav__toggle span { display: block; width: 24px; height: 2px; background: var(--grafite-900); margin: 5px 0; transition: .2s; }
 
 /* Hero */
@@ -186,35 +209,20 @@ strong { font-weight: 700; }
 .hero__slogan .accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero p.hero__slogan { font-size: clamp(2.1rem, 5vw, 3.6rem); max-width: 18ch; color: #fff; }
 
-/* Hero: composicao simbolo + tela do sistema com profundidade */
+/* Hero: somente o simbolo da marca, grande, no desktop.
+   Decisao de 17/09/2026: remove a composicao anterior (simbolo + mockup do
+   sistema). Mantida so a animacao sutil de flutuacao. */
 .hero__media--stage { display: flex; align-items: center; justify-content: center; }
-.stage { position: relative; width: 118%; max-width: 620px; margin-left: -14%; perspective: 1400px; }
-.stage__mark {
-  position: absolute; left: -6%; top: 50%; width: 42%; height: auto;
-  transform: translateY(-50%); opacity: .92; z-index: 0; pointer-events: none;
-  filter: drop-shadow(0 20px 50px rgba(0,0,0,.55));
+.stage--solo { position: relative; width: 100%; max-width: 620px; display: flex; align-items: center; justify-content: center; }
+.stage__mark--solo {
+  position: static; width: 88%; max-width: 560px; height: auto;
+  opacity: 1; transform: none;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,.55));
   animation: stage-float 9s ease-in-out infinite;
 }
-.hero__media .stage__screen {
-  position: relative; z-index: 1; margin-left: 37%;
-  transform: rotateY(-14deg) rotateX(4deg) rotate(-1.2deg);
-  transform-origin: left center;
-  box-shadow: -28px 34px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
-  transition: transform .7s cubic-bezier(.22,.61,.36,1), box-shadow .7s ease;
-  animation: stage-tilt 11s ease-in-out infinite;
-}
-.hero__media--stage:hover .stage__screen {
-  transform: rotateY(-6deg) rotateX(2deg) rotate(-.4deg) translateZ(24px);
-  box-shadow: -18px 40px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1);
-  animation-play-state: paused;
-}
 @keyframes stage-float {
-  0%, 100% { transform: translateY(-50%); }
-  50%      { transform: translateY(-54%); }
-}
-@keyframes stage-tilt {
-  0%, 100% { transform: rotateY(-14deg) rotateX(4deg) rotate(-1.2deg) translateY(0); }
-  50%      { transform: rotateY(-11deg) rotateX(3deg) rotate(-1.2deg) translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
 }
 /* Dentro dos cards de segmento a imagem preenche o card inteiro */
 .seg .media { flex: 1; border-radius: 0; aspect-ratio: auto; }
@@ -433,19 +441,14 @@ strong { font-weight: 700; }
     transition-duration: .001ms !important; scroll-behavior: auto !important;
   }
   .card:hover, .btn:hover, .cta .btn--onLight:hover { transform: none; }
-  .stage__mark { animation: none; }
-  .hero__media .stage__screen { animation: none; transform: rotateY(-14deg) rotateX(4deg) rotate(-1.2deg); }
-  .hero__media--stage:hover .stage__screen { transform: rotateY(-14deg) rotateX(4deg) rotate(-1.2deg); }
+  .stage__mark--solo { animation: none; }
 }
 
 /* Responsivo */
 @media (max-width: 960px) {
   .hero__grid, .split { grid-template-columns: 1fr; gap: 32px; }
-  /* No mobile a perspectiva atrapalha a leitura da tela: achata e centraliza. */
-  .stage { width: 100%; max-width: 100%; margin-left: 0; perspective: none; }
-  .stage__mark { left: 50%; width: 78%; transform: translate(-50%,-50%); opacity: .12; animation: none; }
-  .hero__media .stage__screen { margin-left: 0; transform: none; animation: none; box-shadow: var(--shadow-lg); }
-  .hero__media--stage:hover .stage__screen { transform: none; }
+  .stage--solo { max-width: 100%; }
+  .stage__mark--solo { width: 62%; max-width: 320px; }
   .hero__slogan, .hero p.hero__slogan { max-width: none; }
   .split--rev .split__media { order: 0; }
   .g-4 { grid-template-columns: repeat(2, 1fr); }
@@ -472,6 +475,16 @@ strong { font-weight: 700; }
     display: block; padding: 14px 2px; font-size: 1rem; font-weight: 600; min-height: 44px;
   }
   .nav[data-open="true"] .nav__links .only-mobile { display: block; }
+
+  /* Dropdown no mobile: sem hover, entao o submenu fica sempre aberto,
+     como sub-itens dentro do proprio painel do menu. */
+  .nav__caret { display: none; }
+  .nav__dropdown {
+    display: block; position: static; margin: 0; padding: 0 0 6px 14px;
+    border: 0; box-shadow: none; background: transparent;
+  }
+  .nav__dropdown a { padding: 10px 2px; font-size: .95rem; font-weight: 500; color: var(--txt-muted); }
+  .nav__dropdown .nav__dropdown-all { border-top: 0; margin-top: 0; padding-top: 10px; font-weight: 600; color: var(--grafite-700); }
 }
 @media (max-width: 620px) {
   .g-2, .g-3, .g-4, .form .row { grid-template-columns: 1fr; }
