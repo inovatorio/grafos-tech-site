@@ -54,7 +54,6 @@
   "mainEntity": [
     {"@type":"Question","name":"O que é roteirização de entregas?","acceptedAnswer":{"@type":"Answer","text":"Roteirização é o processo de definir a melhor sequência de paradas de uma rota de entrega para reduzir tempo, distância e custo. Um software de roteirização automatiza esse cálculo considerando pedidos, janelas de entrega e capacidade dos veículos."}},
     {"@type":"Question","name":"A Grafos Tech tem aplicativo para o motorista?","acceptedAnswer":{"@type":"Answer","text":"Sim. A Grafos Tech tem aplicativo para motoristas em Android e iOS, com a rota do dia, navegação, comprovação de entrega pelo celular e leitura de etiquetas QR Code."}},
-    {"@type":"Question","name":"A partir de quantos veículos vale a pena usar?","acceptedAnswer":{"@type":"Answer","text":"A Grafos Tech é indicada para operações com frota própria ou terceirizada acima de 4 veículos, em distribuidoras e autopeças."}},
     {"@type":"Question","name":"O sistema funciona para frota própria e terceirizada?","acceptedAnswer":{"@type":"Answer","text":"Sim. A plataforma atende tanto frota própria quanto terceirizada, com controle de rotas, comprovação de entregas e prestação de contas em ambos os casos."}},
     {"@type":"Question","name":"Quanto custa a Grafos Tech?","acceptedAnswer":{"@type":"Answer","text":"O investimento depende do tamanho da operação: número de veículos, volume de entregas por dia e módulos contratados. A proposta é dimensionada após a demonstração, a partir dos dados reais da operação do cliente."}}
   ]
@@ -103,7 +102,7 @@
           <a class="btn btn--primary btn--lg" href="contato.html">Agendar demonstração</a>
           <a class="btn btn--onDark btn--lg" href="#como-funciona">Ver como funciona</a>
         </div>
-        <p class="hero__note">Para distribuidoras e autopeças com frota acima de 4 veículos.</p>
+        <p class="hero__note">Feita para distribuidoras e autopeças que querem controle real da operação.</p>
       </div>
       <div class="hero__media hero__media--stage">
         <div class="stage stage--solo">
@@ -141,9 +140,12 @@
   <div class="wrap">
     <div class="split">
       <div class="split__media">
-        <!-- PENDENTE 19/08/2026: arquivo ainda nao gerado. Ver PROMPT 15 em PROMPTS-MOCKUPS-2026-08-04.md.
-             NAO PUBLICAR sem gerar a imagem ou sem reverter para img-02-gestora-logistica-*. -->
-        <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/img-10-controle-manual-autopecas-800.webp 800w, assets/img/fotos/img-10-controle-manual-autopecas-1400.webp 1400w" sizes="(max-width:960px) 100vw, 50vw"><img src="assets/img/fotos/img-10-controle-manual-autopecas-1400.jpg" srcset="assets/img/fotos/img-10-controle-manual-autopecas-800.jpg 800w, assets/img/fotos/img-10-controle-manual-autopecas-1400.jpg 1400w" sizes="(max-width:960px) 100vw, 50vw" width="1400" height="1050" alt="Gestor de um distribuidor de auto peças conferindo a lista de entregas em uma prancheta enquanto fala ao telefone, com o estoque de peças ao fundo" loading="lazy" decoding="async"></picture>
+        <!-- STOPGAP 17/09/2026: img-10-controle-manual-autopecas nunca foi gerada (PROMPT 15 em
+             PROMPTS-MOCKUPS-2026-08-04.md). Revertido para img-02-gestora-logistica conforme
+             instrucao ja deixada no codigo em 19/08. ATENCAO: esta e a MESMA foto que o cliente
+             classificou como "descentralizada" na devolutiva de 12/08 - resolve o link quebrado,
+             nao resolve a critica de enquadramento. Segue pendente no backlog de imagens (P0). -->
+        <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/img-02-gestora-logistica-800.webp 800w, assets/img/fotos/img-02-gestora-logistica-1400.webp 1400w" sizes="(max-width:960px) 100vw, 50vw"><img src="assets/img/fotos/img-02-gestora-logistica-1400.jpg" srcset="assets/img/fotos/img-02-gestora-logistica-800.jpg 800w, assets/img/fotos/img-02-gestora-logistica-1400.jpg 1400w" sizes="(max-width:960px) 100vw, 50vw" width="1400" height="1050" alt="Gestora de logística conferindo o celular junto ao computador, com os painéis de rotas abertos e o pátio de carregamento ao fundo" loading="lazy" decoding="async"></picture>
       </div>
       <div>
         <span class="eyebrow">O problema</span>
@@ -217,6 +219,9 @@
     </div>
     <div style="margin-top:44px;">
       <picture class="media media--169"><source type="image/webp" srcset="assets/img/fotos/prod-02-gestao-entregas-mapa-900.webp 900w, assets/img/fotos/prod-02-gestao-entregas-mapa-1600.webp 1600w" sizes="(max-width:960px) 100vw, 50vw"><img src="assets/img/fotos/prod-02-gestao-entregas-mapa-1600.jpg" srcset="assets/img/fotos/prod-02-gestao-entregas-mapa-900.jpg 900w, assets/img/fotos/prod-02-gestao-entregas-mapa-1600.jpg 1600w" sizes="(max-width:960px) 100vw, 50vw" width="1600" height="900" alt="Tela de gestão de entregas da Grafos Tech com a rota planejada e a rota executada sobrepostas no mapa e o status de cada parada" loading="lazy" decoding="async"></picture>
+      <!-- Legenda adicionada em 17/09/2026: o cliente nao viu nexo entre esta imagem e os
+           3 passos (12/08). A tela mostra especificamente os passos 2 e 3, nao o 1. -->
+      <p class="muted" style="text-align:center; margin-top:14px; font-size:.92rem;">A rota roteirizada (passo 2) e a rota executada, com o status de cada parada (passo 3), lado a lado no mesmo mapa.</p>
     </div>
   </div>
 </section>
@@ -266,7 +271,10 @@
   <div class="wrap">
     <div class="split split--rev">
       <div class="split__media">
-        <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/prod-03-janelas-de-entrega-800.webp 800w, assets/img/fotos/prod-03-janelas-de-entrega-1400.webp 1400w" sizes="(max-width:960px) 100vw, 50vw"><img src="assets/img/fotos/prod-03-janelas-de-entrega-1400.jpg" srcset="assets/img/fotos/prod-03-janelas-de-entrega-800.jpg 800w, assets/img/fotos/prod-03-janelas-de-entrega-1400.jpg 1400w" sizes="(max-width:960px) 100vw, 50vw" width="1400" height="1050" alt="Tela de cadastro de janelas de entrega da Grafos Tech: seleção de dias da semana e horário inicial e final" loading="lazy" decoding="async"></picture>
+        <!-- Trocada em 17/09/2026: a tela de janelas de entrega nao tinha nexo com o texto
+             de "simples de adotar, robusta de verdade" (apontado pelo cliente em 12/08).
+             Painel de roteirizacao ilustra o lado "robusta": varias rotas, dados reais, um so sistema. -->
+        <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/prod-01-painel-roteirizacao-800.webp 800w, assets/img/fotos/prod-01-painel-roteirizacao-1400.webp 1400w" sizes="(max-width:960px) 100vw, 50vw"><img src="assets/img/fotos/prod-01-painel-roteirizacao-1400.jpg" srcset="assets/img/fotos/prod-01-painel-roteirizacao-800.jpg 800w, assets/img/fotos/prod-01-painel-roteirizacao-1400.jpg 1400w" sizes="(max-width:960px) 100vw, 50vw" width="1400" height="1050" alt="Painel de roteirização da Grafos Tech: lista com oito rotas do dia, quilometragem e peso por rota, ao lado do mapa com as rotas otimizadas" loading="lazy" decoding="async"></picture>
       </div>
       <div>
         <span class="eyebrow">O diferencial</span>
@@ -290,7 +298,6 @@
     <div class="faq" style="margin-top:36px;">
       <details open><summary>O que é roteirização de entregas?</summary><p>Roteirização é o processo de definir a melhor sequência de paradas de uma rota de entrega para reduzir tempo, distância e custo. Um software de roteirização automatiza esse cálculo considerando pedidos, janelas de entrega e a capacidade de cada veículo.</p></details>
       <details><summary>A Grafos Tech tem aplicativo para o motorista?</summary><p>Sim. Há aplicativo para Android e iOS com a rota do dia, navegação, comprovação de entrega pelo celular e leitura de etiquetas QR Code.</p></details>
-      <details><summary>A partir de quantos veículos vale a pena?</summary><p>A Grafos é indicada para operações com frota própria ou terceirizada acima de 4 veículos, em distribuidoras e autopeças.</p></details>
       <details><summary>O sistema funciona para frota própria e terceirizada?</summary><p>Sim, nos dois casos. A plataforma controla rotas, comprovação de entregas e prestação de contas tanto para frota própria quanto terceirizada.</p></details>
       <details><summary>Quanto tempo leva para implantar?</summary><p>A implantação é rápida por causa da simplicidade da interface. O tempo exato depende do volume de veículos e das integrações. Podemos estimar isso na demonstração.</p></details>
       <details><summary>Como o gestor acompanha as entregas em tempo real?</summary><p>Pelo painel da Grafos, com o status de cada rota e cada entrega atualizado conforme o motorista avança, além dos comprovantes coletados no aplicativo.</p></details>
