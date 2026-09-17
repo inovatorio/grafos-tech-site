@@ -4,6 +4,6 @@
   "version": "1.0.0",
   "description": "Site institucional da Grafos Tech (cliente Inovatorio)",
   "dependencies": {
-    "nodemailer": "^6.9.14"
+    "nodemailer": "^6.10.1"
   }
 }
