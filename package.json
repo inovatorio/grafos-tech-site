@@ -1,0 +1,9 @@
+{
+  "name": "grafos-tech-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site institucional da Grafos Tech (cliente Inovatorio)",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

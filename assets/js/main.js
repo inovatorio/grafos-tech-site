@@ -42,9 +42,12 @@
     if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
     showMsg('Enviando...', true);
 
+    // application/x-www-form-urlencoded (nao multipart): a funcao serverless
+    // /api/enviar.js na Vercel so faz parsing automatico de JSON/urlencoded,
+    // nao de multipart/form-data (nao ha upload de arquivo neste formulario).
     fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: new URLSearchParams(new FormData(form)),
       headers: { 'X-Requested-With': 'XMLHttpRequest' }
     })
       .then(function (r) {
