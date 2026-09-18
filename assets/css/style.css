@@ -165,7 +165,6 @@ strong { font-weight: 700; }
 .hero h1 .accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero p { color: var(--txt-inv-muted); font-size: 1.2rem; max-width: 52ch; }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-.hero__note { margin-top: 18px; font-size: .9rem; color: var(--txt-inv-muted); }
 
 /* Excecao: em fundo grafite o laranja de marca ja passa em contraste (5,7:1) */
 .hero .eyebrow, .page-hero .eyebrow, .cta .eyebrow, .metrics .eyebrow { color: var(--laranja); }
@@ -200,20 +199,14 @@ strong { font-weight: 700; }
 .media--sq  { aspect-ratio: 1/1; }
 .hero__media .media { box-shadow: var(--shadow-lg); }
 
-/* Hero: H1 semantico em corpo de eyebrow + slogan com peso visual de titulo.
-   Decisao do cliente em 19/08/2026: a palavra-chave fica no H1, o impacto no slogan. */
-.hero h1.hero__kicker {
-  font-family: var(--ff-title);
-  font-weight: 700; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase;
-  line-height: 1.5; color: var(--laranja); margin: 0 0 1rem; max-width: 34ch;
-}
+/* Hero: o slogan oficial da marca E o H1 desde 18/09/2026 (pedido do cliente:
+   hero mais simples e curto). A linha de apoio logo abaixo carrega as palavras-chave. */
 .hero__slogan {
   font-family: var(--ff-title);
   font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.12;
   letter-spacing: -0.02em; color: #fff; margin: 0 0 .5em; max-width: 18ch;
 }
 .hero__slogan .accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero p.hero__slogan { font-size: clamp(2.1rem, 5vw, 3.6rem); max-width: 18ch; color: #fff; }
 
 /* Hero: somente o simbolo da marca, grande, no desktop.
    Decisao de 17/09/2026: remove a composicao anterior (simbolo + mockup do
@@ -455,7 +448,7 @@ strong { font-weight: 700; }
   .hero__grid, .split { grid-template-columns: 1fr; gap: 32px; }
   .stage--solo { max-width: 100%; }
   .stage__mark--solo { width: 62%; max-width: 320px; }
-  .hero__slogan, .hero p.hero__slogan { max-width: none; }
+  .hero__slogan { max-width: none; }
   .split--rev .split__media { order: 0; }
   .g-4 { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
