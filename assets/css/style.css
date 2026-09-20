@@ -226,6 +226,14 @@ strong { font-weight: 700; }
 /* Dentro dos cards de segmento a imagem preenche o card inteiro */
 .seg .media { flex: 1; border-radius: 0; aspect-ratio: auto; }
 
+/* Capa dos cards de blog: sangra ate as bordas do card (que tem padding de 30px)
+   e arredonda so os cantos de cima. Ativadas em 20/09/2026, quando as 6 fotos
+   finalmente existiram. */
+.card__capa {
+  display: block; margin: -30px -30px 22px;
+  border-radius: var(--radius) var(--radius) 0 0; overflow: hidden;
+}
+
 /* Cards */
 .card {
   background: #fff; border: 1px solid var(--neutro-200); border-radius: var(--radius);
