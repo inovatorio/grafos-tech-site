@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019i">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019zf">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,7 +74,7 @@
         <li><a href="roteirizacao.html">Roteirização</a></li>
         <li><a href="gestao-de-entregas.html">Gestão de Entregas</a></li>
         
-        <li class="nav__has-dropdown"><a href="solucoes.html">Soluções <svg class="nav__caret" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><ul class="nav__dropdown"><li><a href="solucoes-distribuidora.html">Distribuidora</a></li><li><a href="solucoes-autopecas.html">Autopeças</a></li><li><a class="nav__dropdown-all" href="solucoes.html">Todas as soluções</a></li></ul></li>
+        <li class="nav__has-dropdown"><button type="button" class="nav__trigger" aria-haspopup="true">Soluções <svg class="nav__caret" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="nav__dropdown"><li><a href="solucoes-distribuidora.html">Distribuidora</a></li><li><a href="solucoes-autopecas.html">Autopeças</a></li></ul></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li class="only-mobile"><a href="contato.html">Contato</a></li>
@@ -105,7 +105,6 @@
           <a class="btn btn--primary btn--lg" href="contato.html">Agendar demonstração</a>
           <a class="btn btn--onDark btn--lg" href="#como-funciona">Ver como funciona</a>
         </div>
-        <p class="hero__proof"><strong>+130 clientes</strong> <span aria-hidden="true">·</span> <strong>+1,6 milhão</strong> de entregas por mês <span aria-hidden="true">·</span> Blumenau/SC</p>
       </div>
       <div class="hero__media">
         <!-- Celulares recortados do prod-06 (fundo removido) para pousarem direto no fundo do hero. -->
@@ -135,7 +134,7 @@
 </section>
 
 <!-- ============ A DOR ============ -->
-<section class="section">
+<section class="section section--pain">
   <div class="wrap">
     <div class="split">
       <div class="split__media">
@@ -144,16 +143,14 @@
       </div>
       <div>
         <span class="eyebrow">Antes da Grafos</span>
-        <h2>Onde está o motorista? Hoje, alguém precisa ligar para saber.</h2>
-        <p class="muted">O cliente liga para o comercial. O comercial liga para a expedição. A expedição liga para o motorista. Quando a resposta volta, já virou telefone sem fio.</p>
-        <p class="muted">E antes disso alguém ficou com as notas fiscais na mão, colocando as paradas em ordem: de 10 a 15 minutos por motorista, todo dia. Com 10 motoristas, são mais de duas horas só nisso.</p>
-        <ul class="checks">
-          <li>Rota montada à mão, nota por nota.</li>
-          <li>Ligação o dia inteiro para saber onde está a entrega.</li>
-          <li>Canhoto perdido, ou uma foto que não prova nada.</li>
-          <li>Quando quem monta a rota sai de férias, a rota sai errada.</li>
-          <li>Quilômetro e combustível a mais em rota feita no olho.</li>
-        </ul>
+        <h2>Sem sistema, a entrega depende de papel, telefone e memória.</h2>
+        <p class="muted">Na maioria das distribuidoras e autopeças, o processo ainda é parecido: as notas são organizadas à mão, a rota sai da experiência de quem monta e o acompanhamento acontece por ligação. Seja na logística da distribuidora ou na expedição da autopeças, cada etapa fica num lugar diferente, e nenhuma conversa com a outra.</p>
+        <dl class="pains">
+          <div><dt>Rota montada à mão</dt><dd>De 10 a 15 minutos por motorista, todo dia. Com 10 motoristas, são mais de duas horas só colocando nota em ordem.</dd></div>
+          <div><dt>Telefone sem fio</dt><dd>O cliente liga para o comercial, que liga para a logística ou para a expedição, que liga para o motorista.</dd></div>
+          <div><dt>Regras na cabeça de uma pessoa</dt><dd>Janelas, restrições e manias de cada cliente ficam com quem monta a rota. Quando essa pessoa falta, a rota sai errada.</dd></div>
+          <div><dt>Canhoto sem prova</dt><dd>Perdido numa pasta, ou uma foto que não prova nada quando o cliente contesta a entrega.</dd></div>
+        </dl>
       </div>
     </div>
   </div>
@@ -164,30 +161,33 @@
 <section class="section moments-sec" id="como-funciona">
   <div class="wrap">
     <div class="center" style="max-width:46ch; margin-inline:auto;">
-      <span class="eyebrow">Como funciona</span>
-      <h2>Do pedido ao canhoto, no mesmo sistema.</h2>
-      <p class="lead">O pedido sai do seu ERP, vira rota, vai para o celular do motorista e volta como entrega comprovada. Com a integração, ninguém digita o pedido de novo.</p>
+      <span class="eyebrow">Como a Grafos funciona</span>
+      <h2>Do pedido ao canhoto, cada etapa ligada à próxima.</h2>
+      <p class="lead">Hoje o pedido está no ERP, a rota no papel, o motorista no telefone e o canhoto numa pasta. Na Grafos, é um caminho só: o que acontece numa etapa já aparece na seguinte, e ninguém digita o pedido de novo.</p>
     </div>
     <ol class="moments">
       <li class="moment">
         <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/prod-01-painel-roteirizacao-800.webp 800w, assets/img/fotos/prod-01-painel-roteirizacao-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px"><img src="assets/img/fotos/prod-01-painel-roteirizacao-1400.jpg" srcset="assets/img/fotos/prod-01-painel-roteirizacao-800.jpg 800w, assets/img/fotos/prod-01-painel-roteirizacao-1400.jpg 1400w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px" width="1400" height="1050" alt="Painel de roteirização da Grafos Tech com oito rotas do dia, quilometragem e peso por rota, e o mapa com as paradas ligadas por rota" loading="lazy" decoding="async"></picture>
         <p class="moment__when">Antes da saída,</p>
         <h3 class="moment__verb">planeje.</h3>
-        <p class="muted">A Grafos ordena as paradas a partir das notas do dia. O analista revisa e libera as rotas, sem colocar nota por nota em ordem.</p>
+        <p class="moment__before"><b>Sem a Grafos</b>Notas organizadas à mão e rota feita de memória.</p>
+        <p class="moment__after"><b>Com a Grafos</b>Os pedidos chegam do ERP e as rotas já vêm montadas por região. Quem monta as rotas, na logística ou na expedição, só revisa, ajusta se precisar e libera.</p>
         <a class="more" href="roteirizacao.html">Roteirização &rsaquo;</a>
       </li>
       <li class="moment">
         <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/prod-02-gestao-entregas-mapa-900.webp 900w, assets/img/fotos/prod-02-gestao-entregas-mapa-1600.webp 1600w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px"><img src="assets/img/fotos/prod-02-gestao-entregas-mapa-1600.jpg" srcset="assets/img/fotos/prod-02-gestao-entregas-mapa-900.jpg 900w, assets/img/fotos/prod-02-gestao-entregas-mapa-1600.jpg 1600w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px" width="1600" height="900" alt="Tela de gestão de entregas com a rota planejada e a rota executada sobrepostas no mapa e o status de cada parada" loading="lazy" decoding="async"></picture>
         <p class="moment__when">Durante a rota,</p>
         <h3 class="moment__verb">acompanhe.</h3>
-        <p class="muted">O motorista segue a rota no app. Quando o cliente ligar, o comercial abre o painel e responde na hora, sem ligar para ninguém.</p>
+        <p class="moment__before"><b>Sem a Grafos</b>Ligação para saber onde está cada entrega.</p>
+        <p class="moment__after"><b>Com a Grafos</b>A rota liberada vai para o app do motorista. Cada parada concluída aparece no painel, e quem atende o cliente responde sem ligar para ninguém.</p>
         <a class="more" href="gestao-de-entregas.html">Gestão de entregas &rsaquo;</a>
       </li>
       <li class="moment">
         <picture class="media media--43"><source type="image/webp" srcset="assets/img/fotos/evidencia-entrega-foto-e-local-800.webp 800w, assets/img/fotos/evidencia-entrega-foto-e-local-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px"><img src="assets/img/fotos/evidencia-entrega-foto-e-local-1400.jpg" srcset="assets/img/fotos/evidencia-entrega-foto-e-local-800.jpg 800w, assets/img/fotos/evidencia-entrega-foto-e-local-1400.jpg 1400w" sizes="(max-width:620px) 100vw, (max-width:960px) 50vw, 380px" width="1400" height="1050" alt="Evidência de entrega registrada no app: foto do canhoto assinado ao lado do mapa com o ponto exato da entrega, data e hora" loading="lazy" decoding="async"></picture>
         <p class="moment__when">A cada entrega,</p>
         <h3 class="moment__verb">comprove.</h3>
-        <p class="muted">Cada entrega guarda a foto do canhoto tirada na hora, o local, a data e a hora, quem recebeu e o número da nota. Precisa de um canhoto de meses atrás? É só buscar pela nota.</p>
+        <p class="moment__before"><b>Sem a Grafos</b>Canhoto de papel, guardado numa pasta.</p>
+        <p class="moment__after"><b>Com a Grafos</b>Cada entrega guarda a foto do canhoto tirada na hora, o local, a data e a hora, quem recebeu e o número da nota. O financeiro encontra qualquer canhoto buscando pela nota.</p>
         <a class="more" href="app-motorista.html">App do motorista &rsaquo;</a>
       </li>
     </ol>
@@ -195,11 +195,11 @@
 </section>
 
 <!-- ============ SEGMENTOS ============ -->
-<section class="section">
+<section class="section" id="para-quem-e">
   <div class="wrap">
     <div class="center" style="max-width:44ch; margin-inline:auto;">
       <span class="eyebrow">Para quem é</span>
-      <h2>Distribuidora ou autopeças: a mesma plataforma, no ritmo de cada operação.</h2>
+      <h2>Uma plataforma, dois ritmos de operação.</h2>
       <p class="lead">A plataforma é a mesma. O que muda é o ritmo: a distribuidora tem muitas paradas por rota, a autopeças despacha várias vezes por dia.</p>
     </div>
     <div class="grid g-2" style="margin-top:44px;">
@@ -212,9 +212,6 @@
         <div class="seg__body"><h3>Autopeças</h3><p>Pedido urgente, várias saídas por dia e a expedição precisando de resposta rápida.</p><a href="solucoes-autopecas.html">Ver solução &rsaquo;</a></div>
       </div>
     </div>
-    <div class="center" style="margin-top:34px;">
-      <a class="btn btn--ghost" href="solucoes.html">Comparar as duas soluções</a>
-    </div>
   </div>
 </section>
 
@@ -224,7 +221,7 @@
   <div class="wrap">
     <div class="metrics">
       <span class="eyebrow">Em operação hoje</span>
-      <h2 class="metrics__title">Todo mês, mais de 1,6 milhão de entregas são processadas pela Grafos.</h2>
+      <h2 class="metrics__title">A operação de mais de 130 empresas passa pela Grafos todo mês.</h2>
       <div class="grid g-3">
         <div><div class="metric__v">+130</div><div class="metric__l">clientes</div></div>
         <div><div class="metric__v">+70 mil</div><div class="metric__l">rotas planejadas por mês</div></div>
@@ -267,10 +264,9 @@
 <!-- ============ DEPOIMENTOS ============ -->
 <!-- Avaliações públicas da Grafos Tech no Google (liberadas pelo cliente em 04/08/2026),
      reproduzidas sem alteração de sentido; trechos longos encurtados com reticências. -->
-<section class="section" style="background:var(--neutro-50);">
+<section class="section section--alt">
   <div class="wrap">
     <div class="center" style="max-width:44ch; margin-inline:auto;">
-      <span class="eyebrow">Quem usa</span>
       <h2>O que os clientes dizem.</h2>
       <p class="lead">Avaliações deixadas no Google por quem usa a Grafos no dia a dia.</p>
     </div>
@@ -312,16 +308,21 @@
         </ul>
         <p class="support__note">É o que os clientes mais elogiam nas avaliações do Google.</p>
       </div>
-      <figure class="chat" aria-label="Exemplo de conversa no grupo de suporte">
-        <div class="chat__head">
-          <span class="chat__avatar"><img src="assets/img/grafos_gradient_icon.svg" width="28" height="28" alt=""></span>
-          <div><strong>Sua empresa + Grafos</strong><span>Expedição, Logística, Equipe Grafos</span></div>
+      <figure class="wa" aria-label="Exemplo de conversa no grupo de suporte">
+        <div class="wa__head">
+          <svg class="wa__back" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="wa__avatar"><img src="assets/img/grafos_gradient_icon.svg" width="40" height="40" alt=""></span>
+          <div class="wa__title"><strong>Sua empresa + Grafos</strong><span>Logística, Comercial, você</span></div>
+          <svg class="wa__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l4.5-3v10L15 14M4 7h11v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <svg class="wa__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
         </div>
-        <div class="chat__body">
-          <div class="msg msg--in"><b>Expedição</b>Bom dia! O motorista da rota 3 não está conseguindo abrir a rota no app.<time>06:12</time></div>
-          <div class="msg msg--out"><b>Equipe Grafos</b>Bom dia! A rota foi liberada sem motorista vinculado. Já ajustei por aqui, pode pedir para ele atualizar.<time>06:14</time></div>
-          <div class="msg msg--in"><b>Expedição</b>Abriu. Valeu!<time>06:15</time></div>
+        <div class="wa__body">
+          <span class="wa__day">Hoje</span>
+          <div class="wa__msg wa__msg--in"><b class="wa__who wa__who--a">Logística · Sua empresa</b>Bom dia! O motorista da rota 3 não está conseguindo abrir a rota no app.<span class="wa__time">06:12</span></div>
+          <div class="wa__msg wa__msg--out">Bom dia! A rota foi liberada sem motorista vinculado. Já ajustei por aqui, pode pedir para ele atualizar.<span class="wa__time">06:14 <svg viewBox="0 0 18 11" aria-hidden="true"><path d="M1 6l3 3 6-7M7 8l1 1 6-7" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="wa__msg wa__msg--in"><b class="wa__who wa__who--a">Logística · Sua empresa</b>Abriu. Valeu!<span class="wa__time">06:15</span></div>
         </div>
+        <div class="wa__bar"><span class="wa__input">Mensagem</span><span class="wa__mic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0M12 17v3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
         <figcaption>Conversa ilustrativa.</figcaption>
       </figure>
     </div>
@@ -335,25 +336,24 @@
     <div class="split">
       <div>
         <span class="eyebrow">Nossa história</span>
-        <h2>Começou com uma semana difícil na loja da família.</h2>
-        <p>A Grafos foi criada por Pietra, Lorenzo e Pedro a partir de um problema da loja de material de construção da família: uma semana em que quem cuidava das entregas precisou se afastar, e ninguém sabia por onde ir.</p>
-        <p>Por isso ela é feita por quem já ficou com a pilha de notas na mão e o telefone tocando.</p>
-        <p>O nome vem da Teoria dos Grafos, a matemática por trás da roteirização: pontos ligados por conexões.</p>
-        <a class="more more--dark" href="sobre.html">Conheça a Grafos &rsaquo;</a>
+        <h2>Feita por quem já montou rota com a nota na mão.</h2>
+        <p>Em 2020, a loja de material de construção da família da Pietra e do Lorenzo ficou uma semana sem quem cuidava das entregas. A Pietra assumiu e se perdeu nos endereços.</p>
+        <p>O Pedro criou uma tela para organizar as rotas. Deu certo, outras empresas quiseram usar, e assim nasceu a Grafos.</p>
+        <a class="more more--dark" href="sobre.html">Conheça a história completa &rsaquo;</a>
       </div>
       <ol class="timeline timeline--dark">
-        <li><span class="timeline__when">2020</span><h3>Uma tela para dividir as rotas</h3><p>A Pietra assumiu as entregas, se perdeu nos endereços e pediu ao Pedro uma tela para dividir as rotas entre um lado e o outro da cidade.</p></li>
-        <li><span class="timeline__when">O primeiro cliente</span><h3>Uma distribuidora em Gaspar</h3><p>Depois de melhorar o sistema dentro de casa, ele saiu para a primeira operação de fora.</p></li>
-        <li><span class="timeline__when">Hoje</span><h3>Uma equipe em Blumenau</h3><p>Distribuidoras e autopeças de vários estados usando a Grafos no dia a dia.</p></li>
+        <li><span class="timeline__when">2020</span><h3>Nasce dentro da loja</h3><p>Uma tela simples para organizar as entregas da família.</p></li>
+        <li><span class="timeline__when">Depois</span><h3>Primeiro cliente</h3><p>Uma distribuidora de alimentos em Gaspar.</p></li>
+        <li><span class="timeline__when">Hoje</span><h3>Distribuidoras e autopeças</h3><p>Clientes em vários estados, com a equipe em Blumenau.</p></li>
       </ol>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section" style="background:var(--neutro-50);">
+<section class="section section--alt">
   <div class="wrap" style="max-width:820px;">
-    <div class="center"><span class="eyebrow">Dúvidas frequentes</span><h2>Dúvidas comuns antes de contratar.</h2></div>
+    <div class="center"><h2>Dúvidas comuns antes de contratar.</h2></div>
     <div class="faq" style="margin-top:36px;">
       <details open><summary>A Grafos integra com o meu ERP?</summary><p>Sim. A integração é direta, pelo banco de dados ou pela API do seu ERP, sem planilha nem troca de arquivo. Ela é configurada pela nossa equipe junto com o seu time de TI.</p></details>
       <details><summary>O app funciona sem internet?</summary><p>Funciona. O motorista segue a rota e registra as entregas mesmo sem sinal, no Android e no iPhone. Os registros sobem para o sistema quando a conexão volta.</p></details>
@@ -372,7 +372,6 @@
   <div class="wrap">
     <div class="cta cta--split">
       <div class="cta__text">
-        <span class="eyebrow">Próximo passo</span>
         <h2>Veja a Grafos montando as rotas da sua operação.</h2>
         <ol class="cta__steps">
           <li><b>Conversa</b> A gente entende como você entrega hoje: volume, veículos, ERP.</li>
@@ -412,7 +411,7 @@
         <ul>
           <li><a href="solucoes-distribuidora.html">Distribuidora</a></li>
           <li><a href="solucoes-autopecas.html">Autopeças</a></li>
-          <li><a href="solucoes.html">Todas as soluções</a></li>
+          
         </ul>
       </div>
       <div class="footer">
@@ -425,7 +424,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer__assoc"><span>Associada a</span><ul><li><img src="assets/img/entidades/adac.png" width="711" height="183" alt="ADAC, Associação de Distribuidores e Atacadistas Catarinenses" loading="lazy"></li><li><img src="assets/img/entidades/acate.png" width="674" height="151" alt="ACATE, Associação Catarinense de Tecnologia" loading="lazy"></li><li><img src="assets/img/entidades/blusoft.png" width="711" height="175" alt="ACATE Blusoft, Polo Tecnológico do Vale Europeu" loading="lazy"></li></ul></div>
+    <div class="footer__assoc"><span>Associada a</span><ul><li><img src="assets/img/entidades/adac-branco.svg" width="750" height="188" alt="ADAC, Associação de Distribuidores e Atacadistas Catarinenses" loading="lazy"></li><li><img src="assets/img/entidades/acate-branco.png" width="872" height="174" alt="ACATE, Associação Catarinense de Tecnologia" loading="lazy"></li><li><img src="assets/img/entidades/blusoft-branco.png" width="500" height="118" alt="ACATE Blusoft, Polo Tecnológico do Vale Europeu" loading="lazy"></li></ul></div>
     <div class="footer__bottom">
       <span>&copy; <span data-year>2026</span> Grafos Tech · P2 Soluções em Tecnologia Ltda · Blumenau/SC</span>
       <span>Desenvolvido por <a href="https://inovatorio.com.br" target="_blank" rel="noopener">Inovatório</a></span>

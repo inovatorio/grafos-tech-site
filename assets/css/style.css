@@ -186,7 +186,7 @@ strong { font-weight: 700; }
 .ph--dark { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.22); color: var(--txt-inv-muted); }
 .ph__tag {
   font-family: var(--ff-title); font-weight: 800; font-size: .74rem; letter-spacing: .1em;
-  color: var(--laranja-texto); background: rgba(231,88,26,.10); padding: 5px 11px; border-radius: 100px;
+  color: var(--laranja-texto); background: var(--laranja-a10); padding: 5px 11px; border-radius: 100px;
 }
 .ph__desc { font-size: .92rem; max-width: 34ch; }
 .ph__icon { width: 34px; height: 34px; opacity: .7; }
@@ -245,7 +245,7 @@ strong { font-weight: 700; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card__ico {
   width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center;
-  background: rgba(231,88,26,.10); margin-bottom: 16px;
+  background: var(--laranja-a10); margin-bottom: 16px;
 }
 .card__ico svg { width: 24px; height: 24px; stroke: var(--laranja); }
 .card h3 { margin-bottom: .4em; }
@@ -361,7 +361,7 @@ strong { font-weight: 700; }
 /* Contato - lista de canais (icone de canal, nao "check") */
 .contact-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
 .contact-list li { display: flex; align-items: flex-start; gap: 14px; }
-.contact-list__ico { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(231,88,26,.10); }
+.contact-list__ico { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--laranja-a10); }
 .contact-list__ico svg { width: 20px; height: 20px; stroke: var(--laranja); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .contact-list__label { display: block; font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--txt-muted); font-weight: 700; margin-bottom: 2px; }
 .contact-list a, .contact-list span.contact-list__val { font-weight: 600; color: var(--grafite-900); }
@@ -379,7 +379,7 @@ strong { font-weight: 700; }
 
 /* Page header (paginas internas) */
 .page-hero { background: var(--grafite-900); color: #fff; position: relative; overflow: hidden; }
-.page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 80% at 90% 0%, rgba(231,88,26,.25), transparent 60%); }
+.page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 80% at 90% 0%, var(--laranja-a25), transparent 60%); }
 /* V1: padding-block, nao shorthand. O shorthand zerava o padding-inline do .wrap
    e o conteudo das internas encostava na borda abaixo de 1180px. */
 .page-hero .wrap { position: relative; z-index: 1; padding-block: clamp(48px,7vw,88px); }
@@ -626,7 +626,7 @@ strong { font-weight: 700; }
 .graph__rings { position: absolute; inset: 0; width: 100%; height: 100%; }
 .graph__rings circle { fill: none; stroke: var(--neutro-200); stroke-width: .35; }
 .graph__rings circle + circle { stroke: var(--neutro-100); }
-.graph__hub { box-shadow: 0 0 0 14px rgba(231,88,26,.07); background: #fdf1ea; }
+.graph__hub { box-shadow: 0 0 0 14px var(--laranja-a07); background: #fdf1ea; }
 .graph__node { background: var(--gelo); border: 0; box-shadow: none; width: 27%; height: 12%; padding: 4px 8px; }
 .graph__note { font-size: .82rem; color: var(--txt-muted); margin-top: 18px; max-width: 52ch; }
 
@@ -665,7 +665,7 @@ strong { font-weight: 700; }
 
 /* Integracoes v3: so o simbolo da Grafos no centro, sem fundo, um pouco maior */
 .graph__hub { background: transparent; box-shadow: none; width: 30%; }
-.graph__hub img { width: 78%; filter: drop-shadow(0 10px 18px rgba(231,88,26,.25)); }
+.graph__hub img { width: 78%; filter: drop-shadow(0 10px 18px var(--laranja-a25)); }
 
 /* Cards de segmento: faixa de texto com desfoque e fundo mais escuro, para o texto
    nao se perder em foto clara */
@@ -745,3 +745,298 @@ strong { font-weight: 700; }
 .review__logo--wide { width: 92px; height: 44px; }
 .review__logo { width: 56px; height: 56px; }
 .review__logo--wide { width: 112px; height: 52px; }
+
+/* Antes da Grafos: dores em lista de duas colunas */
+.pains { margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+.pains > div { border-top: 2px solid var(--neutro-200); padding-top: 12px; }
+.pains dt { font-family: var(--ff-title); font-weight: 700; color: var(--grafite-900); margin-bottom: 4px; }
+.pains dd { margin: 0; color: var(--txt-muted); font-size: .95rem; line-height: 1.5; }
+@media (max-width: 620px) { .pains { grid-template-columns: 1fr; } }
+
+/* Como a Grafos funciona: etapas ligadas por uma linha, como nos de um grafo */
+.moments { position: relative; counter-reset: etapa; padding-top: 36px; }
+.moments::before { content: ""; position: absolute; top: 13px; left: 14px; right: 14px; height: 2px;
+  background: linear-gradient(90deg, var(--laranja-vivo), var(--ambar)); opacity: .5; }
+.moment { position: relative; counter-increment: etapa; }
+.moment::before { content: counter(etapa); position: absolute; top: -36px; left: 0; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--grad); color: #fff; font-family: var(--ff-title); font-weight: 800; font-size: .85rem;
+  box-shadow: 0 0 0 6px var(--gelo); }
+.moment__before { margin: 0 0 8px; font-size: .92rem; color: var(--txt-muted); padding: 8px 12px; background: var(--neutro-50); border-radius: var(--radius-sm); }
+.moment__before b, .moment .muted b { color: var(--grafite-900); }
+@media (max-width: 620px) {
+  .moments { padding-top: 0; padding-left: 40px; }
+  .moments::before { top: 0; bottom: 0; left: 13px; right: auto; width: 2px; height: auto; background: linear-gradient(var(--laranja-vivo), var(--ambar)); }
+  .moment::before { top: 0; left: -40px; }
+}
+
+/* Conversa ilustrativa no estilo do WhatsApp atual */
+.wa { margin: 0; width: 100%; max-width: 400px; justify-self: center; border-radius: 28px; overflow: hidden; background: #fff;
+  border: 1px solid var(--neutro-200); box-shadow: 0 24px 60px rgba(31,31,35,.16); font-family: var(--ff-body); }
+.wa__head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #fff; color: #111b21; border-bottom: 1px solid #e9edef; }
+.wa__back { width: 20px; height: 20px; flex: none; color: #111b21; }
+.wa__avatar { width: 42px; height: 42px; border-radius: 50%; background: #f0f2f5; display: grid; place-items: center; flex: none; overflow: hidden; }
+.wa__avatar img { width: 26px; height: 26px; display: block; }
+.wa__title { flex: 1; min-width: 0; line-height: 1.25; }
+.wa__title strong { display: block; font-size: .98rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wa__title span { display: block; font-size: .78rem; color: #667781; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wa__icon { width: 22px; height: 22px; color: #54656f; flex: none; }
+.wa__body { display: flex; flex-direction: column; gap: 6px; padding: 14px 12px 16px; background-color: #efeae2;
+  background-image: radial-gradient(rgba(0,0,0,.035) 1px, transparent 1.2px); background-size: 14px 14px; }
+.wa__day { align-self: center; font-size: .72rem; color: #54656f; background: #fff; border-radius: 8px; padding: 4px 10px; margin-bottom: 4px; box-shadow: 0 1px .5px rgba(11,20,26,.13); }
+.wa__msg { position: relative; max-width: 84%; padding: 6px 10px 20px; border-radius: 10px; font-size: .9rem; line-height: 1.4; color: #111b21; box-shadow: 0 1px .5px rgba(11,20,26,.13); }
+.wa__msg--in { align-self: flex-start; background: #fff; border-top-left-radius: 0; }
+.wa__msg--out { align-self: flex-end; background: #d9fdd3; border-top-right-radius: 0; padding-right: 64px; padding-bottom: 8px; }
+.wa__who { display: block; font-size: .8rem; font-weight: 600; margin-bottom: 2px; }
+.wa__who--a { color: #1fa855; } .wa__who--b { color: var(--laranja-queimado); }
+.wa__time { position: absolute; right: 8px; bottom: 4px; font-size: .68rem; color: #667781; display: inline-flex; align-items: center; gap: 3px; }
+.wa__time svg { width: 16px; height: 10px; }
+.wa__bar { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #efeae2; }
+.wa__input { flex: 1; background: #fff; border-radius: 22px; padding: 10px 16px; font-size: .9rem; color: #8696a0; }
+.wa__mic { width: 42px; height: 42px; border-radius: 50%; background: #1daa61; display: grid; place-items: center; flex: none; }
+.wa__mic svg { width: 20px; height: 20px; }
+.wa figcaption { font-size: .75rem; color: var(--txt-muted); padding: 8px 16px 10px; text-align: right; background: #fff; }
+
+/* CTA final v3: mais respiro, sem caixa atras do botao */
+.cta--split { padding: clamp(48px, 7vw, 88px) clamp(28px, 6vw, 80px); gap: clamp(40px, 6vw, 88px); grid-template-columns: 1.2fr 1fr; }
+.cta--split h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 30px; max-width: 18ch; }
+.cta__steps { gap: 22px; }
+.cta__steps li { padding-left: 50px; font-size: 1.02rem; }
+.cta__steps li::before { width: 34px; height: 34px; font-size: .95rem; }
+.cta__steps b { margin-bottom: 2px; font-size: 1.05rem; }
+.cta__actions { background: none; border: 0; padding: 0; gap: 18px; align-items: center; }
+.btn--cta { width: 100%; max-width: 380px; font-size: 1.2rem; padding: 24px 32px; }
+.cta__wa { font-size: 1rem; }
+@media (max-width: 960px) { .cta__actions { align-items: stretch; } .btn--cta { max-width: none; } }
+@media (max-width: 620px) {
+  .cta--split { padding: 40px 22px; }
+  .btn--cta { font-size: 1.05rem; padding: 20px 18px; white-space: normal; }
+  .cta__steps li { padding-left: 46px; font-size: .98rem; }
+}
+@media (max-width: 960px) { .cta--split { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .reviews { grid-template-columns: 1fr 1fr; } .review { min-width: 0; } }
+@media (max-width: 700px) { .reviews { grid-template-columns: 1fr; } }
+
+/* WhatsApp: a conversa e vista pelo celular de quem atende na Grafos.
+   O simbolo tem o centro visual deslocado no arquivo; compensado aqui. */
+.wa__avatar img { width: 28px; height: 28px; transform: translate(-6%, 5%); }
+.wa__msg--out { padding-right: 70px; }
+
+/* Sem a Grafos x Com a Grafos: contraste de cor entre o processo antigo e o novo */
+.moment__before, .moment__after { position: relative; margin: 0; padding: 12px 14px 12px 40px; border-radius: var(--radius-sm); font-size: .93rem; line-height: 1.5; }
+.moment__before b, .moment__after b { display: block; font-family: var(--ff-title); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 2px; }
+.moment__before::before, .moment__after::before { position: absolute; left: 12px; top: 12px; width: 18px; height: 18px; border-radius: 50%;
+  display: grid; place-items: center; font-size: .7rem; font-weight: 800; color: #fff; }
+.moment__before { background: var(--neutro-50); color: var(--txt-muted); border: 1px dashed var(--neutro-300); margin-bottom: 10px; }
+.moment__before b { color: var(--grafite-700); }
+.moment__before::before { content: "✕"; background: var(--grafite-700); }
+.moment__after { background: var(--laranja-a07); color: var(--grafite-900); border: 1px solid var(--laranja-a25); }
+.moment__after b { color: var(--laranja-texto); }
+.moment__after::before { content: "✓"; background: var(--grad); }
+
+/* Antes da Grafos: imagem acompanha a altura do texto; menos respiro ate "Como funciona" */
+.section--pain { padding-bottom: clamp(32px, 4vw, 56px); }
+.section--pain + .moments-sec { padding-top: clamp(32px, 4vw, 56px); }
+@media (min-width: 961px) {
+  .section--pain .split { align-items: stretch; }
+  .section--pain .split__media { display: flex; }
+  .section--pain .split__media .media { aspect-ratio: auto; width: 100%; min-height: 100%; }
+}
+
+/* ==========================================================================
+   Revisao visual (Impeccable + design system), 19/10/2026
+   ========================================================================== */
+:root {
+  --laranja-texto-forte: #B03F0F;          /* texto laranja pequeno sobre neutro-50 (>= 4,8:1) */
+  --laranja-a07: rgba(231,88,26,.07);
+  --laranja-a10: rgba(231,88,26,.10);
+  --laranja-a25: rgba(231,88,26,.25);
+}
+
+/* 1. Contraste */
+section[style*="neutro-50"] .eyebrow, .support .eyebrow { color: var(--laranja-texto-forte); }
+.review__stars { color: var(--laranja); }
+
+/* Hero: palavra de destaque em laranja solido, sem texto em degrade */
+.hero h1 .accent, .hero__slogan .accent { background: none; -webkit-text-fill-color: currentColor; color: var(--laranja); }
+
+/* 2. Celular: botao flutuante nao cobre o rodape; linha de prova nao quebra no meio */
+.hero__proof .nw { white-space: nowrap; }
+@media (max-width: 620px) { .site-footer { padding-bottom: 104px; } }
+
+/* 3. Ritmo: suporte separado dos depoimentos; respiro entre o CTA e o rodape */
+.support { background: var(--gelo); }
+main > .section--tight:last-child { padding-bottom: clamp(64px, 8vw, 110px); }
+
+/* 4. Alinhamento: links das etapas e assinaturas dos depoimentos pelo pe */
+.moment { display: flex; flex-direction: column; }
+.moment > a.more { margin-top: auto; padding-top: 14px; }
+.moment .moment__after { margin-bottom: 4px; }
+.review figcaption { margin-top: auto; }
+.review__logo, .review__logo--wide { width: auto; height: auto; max-height: 40px; max-width: 96px; }
+
+/* 5. Integracoes: logos com peso parecido; circulo contido no celular */
+.graph__node img { max-height: 72%; max-width: 86%; }
+@media (max-width: 620px) { .graph { width: min(100%, 340px); } .graph__node { width: 30%; } }
+
+/* 6. Numeros em Inter com algarismos tabulares, como o manual pede para dados */
+.metrics .metric__v { font-family: var(--ff-body); font-weight: 600; letter-spacing: -.01em; }
+
+/* 7. Acabamentos */
+h1, h2 { text-wrap: balance; }
+.moments-sec h2 { max-width: 22ch; margin-inline: auto; }
+.metrics__note { font-size: .85rem; }
+
+/* CTA: pulso mais suave e mais lento */
+.btn--cta { box-shadow: 0 8px 22px rgba(231,88,26,.34); animation: cta-pulse-soft 3.4s ease-out infinite; }
+.btn--cta:hover { box-shadow: 0 12px 28px rgba(231,88,26,.42); }
+@keyframes cta-pulse-soft {
+  0%   { box-shadow: 0 8px 22px rgba(231,88,26,.34), 0 0 0 0 rgba(231,88,26,.28); }
+  70%  { box-shadow: 0 8px 22px rgba(231,88,26,.34), 0 0 0 10px rgba(231,88,26,0); }
+  100% { box-shadow: 0 8px 22px rgba(231,88,26,.34), 0 0 0 0 rgba(231,88,26,0); } }
+@media (prefers-reduced-motion: reduce) { .btn--cta { animation: none; } }
+
+/* Sem x Com a Grafos v2: sem borda tracejada; "Com a Grafos" no degrade do botao.
+   Texto grafite sobre o degrade (5,2:1 a 7,2:1), para continuar legivel. */
+.moment__before { border: 0; background: var(--neutro-50); }
+.moment__after { background: var(--grad); border: 0; color: var(--grafite-900); box-shadow: 0 8px 20px rgba(231,88,26,.25); }
+.moment__after b { color: var(--grafite-900); }
+.moment__after::before { content: "✓"; background: #fff; color: var(--laranja-queimado); }
+
+/* Links das etapas no padrao dos botoes da marca */
+.moment > a.more { align-self: flex-start; margin-top: auto; padding: 10px 18px; border-radius: var(--radius-pill);
+  background: var(--grad); color: #fff; font-family: var(--ff-title); font-weight: 700; font-size: .9rem; text-decoration: none;
+  box-shadow: 0 6px 16px rgba(231,88,26,.25); transition: transform .15s ease, box-shadow .2s ease; }
+.moment > a.more:hover { color: #fff; text-decoration: none; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(231,88,26,.35); }
+.moment .moment__after { margin-bottom: 18px; }
+
+/* Menos respiro entre "Como a Grafos funciona" e "Para quem e" */
+.moments-sec { padding-bottom: clamp(32px, 4vw, 56px); }
+.moments-sec + .section { padding-top: clamp(32px, 4vw, 56px); }
+
+/* Com a Grafos v3: sem fundo laranja; rotulo em texto degrade e fundo quente bem suave */
+.moment__after { background: #fff; border: 1px solid var(--laranja-a25); box-shadow: 0 6px 18px rgba(231,88,26,.10); color: var(--grafite-900); }
+.moment__after b { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; font-size: .76rem; }
+.moment__after::before { content: "✓"; background: var(--grad); color: #fff; }
+
+/* Etapas: imagens e caixas com o mesmo tamanho nas tres colunas (subgrid) */
+@media (min-width: 621px) {
+  .moments { grid-template-rows: repeat(6, auto); }
+  .moment { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
+  .moment > .media { margin-bottom: 22px; }
+  .moment .moment__before { margin-bottom: 10px; }
+  .moment .moment__after { margin-bottom: 18px; }
+  .moment > a.more { align-self: start; margin-top: 0; }
+}
+.moment .media--43 { aspect-ratio: 16 / 10; width: 100%; }
+
+/* Numeros: volta para Montserrat em negrito, como estava */
+.metrics .metric__v { font-family: var(--ff-title); font-weight: 800; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+@media (min-width: 621px) { .moment > a.more { justify-self: start; } }
+
+/* Links das etapas: so texto em degrade, sem fundo de botao */
+.moment > a.more { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  padding: 0; border-radius: 0; box-shadow: none; font-size: .95rem; }
+.moment > a.more:hover { color: transparent; transform: none; box-shadow: none; text-decoration: underline; text-decoration-color: var(--laranja); text-underline-offset: 4px; }
+
+/* Sem x Com a Grafos v4: versao leve, sem caixas, sem icones; so rotulo + texto e uma linha fina entre eles */
+.moment__before, .moment__after { background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0; }
+.moment__before::before, .moment__after::before { content: none; }
+.moment__before { color: var(--txt-muted); padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--neutro-200); }
+.moment__before b { color: var(--txt-muted); }
+.moment__after { color: var(--grafite-900); }
+.moment .moment__before { margin-bottom: 12px; }
+.moment .moment__after { margin-bottom: 16px; }
+
+/* Hero mais baixo: no notebook (768-800px de altura) ja aparecem o hero e a faixa de clientes */
+@media (min-width: 961px) {
+  .hero__grid { padding: clamp(36px, 4.5vw, 64px) 0; gap: 40px; }
+  .hero__phones { width: 100%; max-width: 500px; margin: -12px 0 -36px; }
+  .hero__slogan { font-size: clamp(2.1rem, 4.2vw, 3.2rem); }
+}
+.clients { padding-top: 32px; }
+
+/* Rodape: logos oficiais das entidades nas cores originais, numa faixa clara */
+.footer__assoc { background: var(--gelo); border: 0; border-radius: var(--radius); padding: 16px 24px; margin-top: 36px; gap: 14px 32px; }
+.footer__assoc > span { color: var(--grafite-700); }
+.footer__assoc ul { gap: 18px 40px; }
+.footer__assoc img { filter: none; opacity: 1; height: 34px; width: auto; }
+.footer__assoc img[src*="adac"] { height: 46px; }
+.footer__assoc img[src*="adac"] { height: 56px; }
+
+/* Rodape: entidades de volta no fundo escuro, com as versoes claras oficiais dos logos */
+.footer__assoc { background: none; border-radius: 0; padding: 26px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.footer__assoc > span { color: var(--txt-inv-muted); }
+.footer__assoc img, .footer__assoc img[src*="adac"] { filter: none; opacity: .9; height: 34px; width: auto; }
+.footer__assoc li:hover img { opacity: 1; }
+
+/* Primeira tela "limpa" no desktop: hero + faixa de clientes ocupam exatamente a altura
+   da janela (menos o cabecalho), e "Antes da Grafos" so aparece ao rolar. */
+@media (min-width: 961px) {
+  :root { --header-h: 73px; --clients-h: 148px; }
+  .hero { min-height: calc(100svh - var(--header-h) - var(--clients-h)); display: flex; align-items: center; }
+  .hero > .wrap { width: 100%; }
+  .clients { min-height: var(--clients-h); box-sizing: border-box; }
+}
+
+/* Faixa de clientes: mesma margem acima (ate o hero) e abaixo (ate o fim da tela) */
+.clients { padding: 22px 0; }
+.clients__title { margin-bottom: 16px; }
+@media (min-width: 961px) { .clients { min-height: 0; } }
+@media (min-width: 961px) { :root { --clients-h: 144px; } }
+@media (min-width: 961px) { .hero { min-height: calc(100vh - var(--header-h) - var(--clients-h)); } }
+
+/* Tablet (621-960px): as 3 etapas viram linhas horizontais (imagem a esquerda, texto a direita),
+   em vez de 2 em cima e 1 sozinha embaixo */
+@media (min-width: 621px) and (max-width: 960px) {
+  .moments { grid-template-columns: 1fr; grid-template-rows: none; gap: 40px; padding-top: 0; padding-left: 44px; }
+  .moments::before { top: 0; bottom: 0; left: 13px; right: auto; width: 2px; height: auto; background: linear-gradient(var(--laranja-vivo), var(--ambar)); }
+  .moments .moment, .moments .moment:last-child { max-width: none; grid-column: auto; }
+  .moment { display: grid; grid-row: auto; grid-template-columns: minmax(0, 42%) minmax(0, 1fr); grid-template-rows: auto; column-gap: 28px; align-items: start; }
+  .moment::before { top: 0; left: -44px; }
+  .moment > .media { grid-column: 1; grid-row: 1 / span 5; margin-bottom: 0; }
+  .moment > :not(.media) { grid-column: 2; }
+  .moment > a.more { justify-self: start; }
+}
+
+/* Tablet: sem item sozinho na ultima linha */
+@media (min-width: 621px) and (max-width: 960px) {
+  .clients__logos { grid-template-columns: repeat(3, 1fr); max-width: 560px; margin-inline: auto; }
+  .reviews { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+}
+
+/* Menu: "Solucoes" so abre a lista (nao e mais link) */
+.nav__trigger { display: inline-flex; align-items: center; gap: 5px; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: .95rem; font-weight: 500; color: var(--grafite-700); }
+.nav__has-dropdown:hover .nav__trigger, .nav__trigger:focus-visible { color: var(--laranja-texto); }
+@media (max-width: 960px) {
+  .nav[data-open="true"] .nav__trigger { display: block; padding: 14px 2px; font-size: 1rem; font-weight: 600; min-height: 44px; cursor: default; }
+}
+
+/* Celulares recortados no hero das paginas internas */
+.page-hero__media .hero__phones { width: 100%; max-width: 480px; margin: -10px auto -30px; display: block; filter: drop-shadow(0 30px 50px rgba(0,0,0,.45)); }
+
+/* Secao alternada (fundo cinza claro) como classe, em vez de estilo inline */
+.section--alt { background: var(--neutro-50); }
+.section--alt .eyebrow { color: var(--laranja-texto-forte); }
+
+/* Paginas internas: titulo no mesmo tamanho do hero da home */
+.page-hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); }
+
+/* Tablet: grade de 3 cards vira 1 coluna (exceto a faixa de numeros) */
+@media (min-width: 621px) and (max-width: 960px) {
+  .grid.g-3:not(.metrics .g-3) { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+}
+
+/* Sobre: missao, visao e valores como lista, nao cards */
+.beliefs { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+.beliefs__list { margin: 0; display: grid; gap: 0; }
+.beliefs__list > div { display: grid; grid-template-columns: 120px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid var(--neutro-200); }
+.beliefs__list > div:last-child { border-bottom: 1px solid var(--neutro-200); }
+.beliefs__list dt { font-family: var(--ff-title); font-weight: 700; color: var(--grafite-900); }
+.beliefs__list dd { margin: 0; color: var(--txt-muted); }
+@media (max-width: 960px) { .beliefs { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 620px) { .beliefs__list > div { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Citacao: sem estilos inline */
+.quote { margin: 0; }
+.quote figcaption strong { color: var(--grafite-900); }

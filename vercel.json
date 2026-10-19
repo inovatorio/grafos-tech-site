@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/solucoes.html", "destination": "/#para-quem-e", "permanent": true },
+    { "source": "/solucoes", "destination": "/#para-quem-e", "permanent": true }
+  ]
+}
